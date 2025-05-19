@@ -1,0 +1,103 @@
+% Preamble
+\documentclass[11pt]{article}
+\title{Initial Project Overview - SOC10101 Honours Project (40 Credits)}
+\author{Alex Dumbreck}
+\date{26/03/2025}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{fancyhdr}
+
+% Page layout
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+
+% Document
+\begin{document}
+    \maketitle
+    \section*{Title of Project:}
+    Investigating the use of Genetic Algorithms to optimise a path planning algorithm within the Context of a Formula Student Team
+
+    \section*{Overview of Project Content and Milestones:}
+    The project will involve the development of a simple Simultaneous Localisation and Mapping (SLAM) algorithm\cite{LeLargeBiederLauer2021} used to store and refine the locations of cones that conform to the current FSUK-AI 2025 rules\cite{FSUKAIRules2025}, relative to a global reference frame based on the car's starting position.
+    Then, using the output of the developed SLAM algorithm, we will investigate the use of genetic algorithms to optimise a path planning algorithm\cite{HarperEvolutionary}\('\)s output to facilitate the fastest possible lap time.
+    In addition, we will also develop a simulation environment\cite{platt2022comparative} to test the performance of the SLAM algorithm, path planning algorithms and genetic algorithm implementations.
+
+    \section*{The Main Deliverables:}
+    \begin{itemize}
+        \item A Path Planning algorithm, suited to optimisation by genetic algorithm
+        \item A SLAM algorithm
+        \item A simulation environment
+        \item A genetic algorithm to optimise the lap time of the car.
+        \item A report detailing the development of the algorithms and environments.
+    \end{itemize}
+
+    \section*{The Target Audience for the Deliverable(s):}
+    \begin{itemize}
+        \item Formula Student teams
+        \item Researchers in the field of SLAM and genetic algorithms
+        \item Students and academics in the field of robotics
+    \end{itemize}
+
+    \section*{The Work to be Undertaken:}
+    \begin{itemize}
+        \item Researching the state-of-the-art in SLAM algorithms
+        \item Research into genetic algorithms
+        \item Research into path planning algorithms
+        \item Research into simulation environments
+        \item Developing a SLAM algorithm
+        \item Developing a genetic algorithm
+        \item Developing a path planning algorithm
+        \item Developing a simulation environment
+        \item Integrating the SLAM algorithm, the genetic algorithm, the path planning algorithm, and the simulation environment
+        \item Baseline the performance of the path planning algorithm within the simulation environment:
+        \begin{itemize}
+            \item Testing the performance of the standalone path planning algorithm
+            \item Testing the performance of the path planning algorithm with the SLAM algorithm
+            \item Testing the performance of the path planning algorithm with the SLAM algorithm and genetic algorithm
+        \end{itemize}
+        \item Writing a report detailing the development of the SLAM algorithm, the genetic algorithm, the path planning algorithm, and the simulation environment
+    \end{itemize}
+
+    \section*{Additional Information / Knowledge Required:}
+    \begin{itemize}
+        \item SLAM algorithms
+        \item Path planning algorithms
+        \item Genetic algorithms
+        \item Robotics (ROS)
+        \item Simulation environments (Compatible with ROS2)
+        \item Formula Student
+        \item Programming languages: Python, C++
+        \item Git (For version control)
+        \item Cuda (For GPU acceleration)
+    \end{itemize}
+
+    \section*{Information Sources that Provide a Context for the Project:}
+    \begin{itemize}
+        \item Robotics research papers (Specifically SLAM algorithms, path planning algorithms, genetic algorithms and simulators compatible with ROS2)\cite{LeLargeBiederLauer2021, HarperEvolutionary, platt2022comparative}
+        \item Formula Student AI competition rules and regulations\cite{FSUKAIRules2025}
+        \item Formula Student team reports and documentation
+    \end{itemize}
+
+    \section*{The Importance of the Project:}
+    \begin{itemize}
+        \item It will contribute to the field of SLAM algorithms and genetic algorithms
+        \item It will provide a valuable resource for Formula Student teams
+        \item It will provide a valuable resource for researchers, students and academics in the field of robotics
+    \end{itemize}
+
+    \section*{The Key Challenge(s) to be Overcome:}
+    \begin{itemize}
+        \item Developing a SLAM algorithm that is accurate and efficient
+        \item Developing a genetic algorithm that is capable of optimising the path planning algorithm effectively.
+        \item Developing a simulation environment that can accurately test the performance of the SLAM algorithm and the genetic algorithm
+        \item Integrating the SLAM algorithm, the genetic algorithm, and the simulation environment
+        \item Testing the performance of the SLAM algorithm and the genetic algorithm in the simulation environment
+        \item Writing a report that clearly and concisely details the development of the SLAM algorithm, the genetic algorithm, and the simulation environment
+    \end{itemize}
+
+    \bibliography{custom}
+    \bibliographystyle{ieeetr}
+\end{document}
