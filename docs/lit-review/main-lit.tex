@@ -1,0 +1,67 @@
+%! Author = adumbreck
+%! Date = 09/04/2025
+
+% Preamble
+\documentclass[a4paper]{article}
+
+
+\bibliographystyle{unsrt}
+\nocite{*}  % Include all entries in the bibliography
+
+
+% Metadata
+\newcommand{\docTitle}{Literature Review - Investigating the use of Genetic Algorithms to optimise a path planning algorithm within the Context of a Formula Student Team}
+\newcommand{\docAuthor}{Alex Dumbreck - 40552841}
+\newcommand{\authorMail}{mailto:40552841@live.napier.ac.uk}
+\newcommand{\docSubject}{Honours Project - SOC10101}
+
+% Dependencies
+\usepackage{amsmath}
+\usepackage{minted}
+\usepackage{import}
+\usepackage[
+    pdfauthor={\docAuthor},   % author  metadata
+    pdftitle={\docTitle},     % title   metadata
+    pdfsubject={\docSubject}, % subject metadata
+    hidelinks,                % clickable links in table of contents
+]{hyperref}
+\usepackage[svgnames]{xcolor}
+
+% Configure Minted
+\usemintedstyle{native}
+\setminted{
+    fontsize=\footnotesize,
+    breaklines=true,
+    linenos=true,
+    numbersep=5pt,
+    frame=lines,
+    framesep=2mm,
+    bgcolor=Black,
+}
+
+% Page Layout
+\title{\docTitle}
+\author{\docAuthor}
+\date{}
+
+% Document
+\begin{document}
+    \maketitle
+    \flushbottom
+    \tableofcontents
+    \clearpage
+
+    \input{acronyms-and-abbreviations}
+
+    \chapter{Papers and Articles reviewed}\label{ch:papers-reviewed}
+    \input{papers/le-large-bieder-lauer-2021}
+    \input{papers/formula-student-uk-ai-rules-2025}
+    \input{papers/harper-2024-evolutionary}
+    \input{papers/platt-2022-comparative}
+    \input{papers/amz-racing-2020}
+
+    \clearpage
+    \appendix
+    \bibliography{custom.bib}
+
+\end{document}

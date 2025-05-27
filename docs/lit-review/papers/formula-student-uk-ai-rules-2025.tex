@@ -1,0 +1,85 @@
+\section{Analysis: Formula Student UK AI Rules (2025) for SLAM and Genetic Algorithm Path Planning}\label{sec:fs-uk-ai-rules-2025}
+
+\subsection{Document Overview}\label{subsec:document-overview}
+\begin{itemize}
+    \item \textbf{Title:} Formula Student UK AI Rules 2025 (relevant sections pertaining to Dynamic Events and ADS requirements)
+    \item \textbf{Source:} Formula Student / IMechE (assumed)
+    \item \textbf{Year:} 2025 (effective year)
+    \item \textbf{Type:} Competition Rulebook
+\end{itemize}
+
+\subsection{Core Focus/Summary}\label{subsec:core-focus/summary}
+The Formula Student AI (FS-AI) 2025 rules outline dynamic events (Skidpad, Acceleration, Autocross, Trackdrive) requiring an Automated Driving System (ADS) to navigate cone-demarcated courses.
+A core ADS requirement is the Dynamic Driving Task (DDT), encompassing Object and Event Detection and Response (OEDR), path planning, vehicle control, and mission tracking.
+This analysis focuses on the implications for SLAM-based cone mapping and GA-based path planning.
+Penalties for deviations underscore the need for precision.
+
+\subsection{Key Rules and Implications for SLAM and Path Planning}\label{subsec:key-rules-and-implications-for-slam-and-path-planning}
+
+\subsubsection{For SLAM Algorithm Design}
+\begin{itemize}
+    \item \textbf{Cone-based Mapping:} SLAM must use cones as primary landmarks, including reliable detection, classification, and precise localisation.
+    \item \textbf{Real-time Performance:} Continuous map and pose updates are necessary for dynamic racing.
+    \item \textbf{Robustness:} Must handle varying lighting/weather (Rule D3).
+    \item \textbf{Accuracy and Consistency:} Critical for avoiding penalties (Rule D9) and reliable path planning, especially for multi-lap events.
+    \item \textbf{Map Representation:} Output should be easily consumable by the GA path planner (e.g., cone coordinates).
+    \item \textbf{Initialization and Loop Closure:} Handle unknown environments and maintain long-term accuracy.
+\end{itemize}
+
+\subsubsection{For Genetic Algorithm-based Path Planning}
+\begin{itemize}
+    \item \textbf{Input from SLAM:} Directly uses SLAM-generated cone map for drivable area/constraints.
+    \item \textbf{Path Representation:} Suitable path representation for GA evolution (e.g., waypoints, splines).
+    \item \textbf{Fitness Function Design:} Crucial for minimizing lap time, adhering to boundaries (avoid D9 penalties), ensuring path smoothness/feasibility, fulfilling event-specifics (lap counts), and safety.
+    \item \textbf{Constraint Handling:} Effective management of track limits and vehicle dynamics.
+    \item \textbf{Exploration vs Exploitation:} Balance in genetic operators for optimal racing lines.
+    \item \textbf{Real-time Adaptation (Advanced):} Potential for path adaptation based on evolving SLAM data.
+\end{itemize}
+
+\subsubsection{Specific Dynamic Event Requirements}
+\begin{itemize}
+    \item \textbf{D4 Skidpad:} Precise circular/figure-eight paths; SLAM maps tight geometry; GA fitness check must ensure lap count (D9.1.11) and smooth trajectories.
+    \item \textbf{D5 Acceleration:} Simple straight path; SLAM identifies start/end; GA ensures corridor adherence.
+    \item \textbf{D6 Autocross/Sprint:} Complex single lap; rapid, accurate SLAM mapping; GA finds optimal line, penalizing errors.
+    \item \textbf{D8 Trackdrive (10 laps):} Emphasises SLAM consistency and GA's repeated efficient path planning; potential for map refinement and path adaptation.
+\end{itemize}
+
+\subsection{Challenges and Considerations}\label{subsec:challenges-and-considerations}
+\begin{itemize}
+    \item \textbf{Sensor Data Interpretation:} Reliable cone detection/differentiation under varying conditions (D3 Weather Conditions) is foundational for SLAM .
+    \item \textbf{Computational Resources:} SLAM and GAs must be optimised for on-board processing.
+    \item \textbf{Integration of SLAM and Path Planning:} Tight, low-latency integration is vital.
+    \item \textbf{State Estimation Uncertainty:} SLAM uncertainty estimates could inform robust GA decisions (e.g., safety margins).
+    \item \textbf{Dynamic Obstacles (Not Explicitly Mentioned for Cones):} Unexpected obstacles would require extensions beyond basic cone navigation.
+\end{itemize}
+
+\subsection{Relevance to Honours Project: "Investigating the use of Genetic Algorithms to optimise a path planning algorithm within the Context of a Formula Student Team"}\label{subsec:relevance-to-honours-project:-"investigating-the-use-of-genetic-algorithms-to-optimise-a-path-planning-algorithm-within-the-context-of-a-formula-student-team"}
+
+\subsubsection{Input Relevance}
+\begin{itemize}
+    \item \textbf{Problem Definition:} The rules directly define the operational domain, constraints (cone-based tracks, specific manoeuvres), and objectives (lap times, penalty avoidance) for the path planning algorithm.
+    \item \textbf{Performance Metrics:} The rules establish the criteria (e.g., speed, accuracy, completion of laps) against which the GA-optimised path planner will be evaluated.
+    \item \textbf{Sensor Data Context:} Understanding the environment (cones as landmarks) informs the type of data the SLAM system (input to the path planner) must provide.
+\end{itemize}
+
+\subsubsection{Process Relevance}
+\begin{itemize}
+    \item \textbf{Algorithm Design:} The GA's fitness function must be designed to directly address rule compliance (e.g., minimizing penalties for cone hits, maximizing lap completion).
+    \item \textbf{Simulation Environment Design:} The simulation environment created for testing must accurately reflect the track layouts and rules described (e.g., cone placement, track dimensions for Skidpad, Autocross).
+    \item \textbf{Testing Scenarios:} The dynamic events (Skidpad, Autocross, Trackdrive) provide specific scenarios for testing the robustness and performance of the integrated SLAM and GA path planning system.
+\end{itemize}
+
+\subsubsection{Output Relevance}
+\begin{itemize}
+    \item \textbf{Validation of Path Planner:} The success of the GA-optimised path planner will be measured by its ability to generate paths that allow the ADS to perform successfully in rule-compliant simulations of the dynamic events.
+    \item \textbf{Demonstration of Feasibility:} Adherence to these rules demonstrates the practical applicability of the GA approach to the Formula Student AI challenge.
+    \item \textbf{Project Deliverables:} The rules shape the requirements for the final path planning solution, ensuring it is tailored to the specific context of a Formula Student team.
+\end{itemize}
+
+\subsection{Further Notes/Actionable Insights}\label{subsec:further-notes/actionable-insights}
+\begin{itemize}
+    \item The FS-AI rules provide a structured environment for developing and testing autonomous racing algorithms, pushing innovation in real-time perception, mapping, and planning.
+    \item Addressing these rules contributes to broader research in robust SLAM for high-speed navigation and optimal path planning in complex, constrained environments.
+    \item The specific focus on cone-based navigation is relevant to other applications where simple, repeated landmarks define operational areas.
+    \item Ensure the simulation environment accurately models penalty zones and scoring according to D9.
+\end{itemize}

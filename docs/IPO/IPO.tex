@@ -8,6 +8,10 @@
 \usepackage{amsmath}
 \usepackage{wasysym}
 \usepackage{fancyhdr}
+\usepackage[backend=bibtex,style=numeric]{biblatex}  %backend=biber is 'better'
+
+% Bibliography setup
+\addbibresource{../custom.bib}
 
 % Page layout
 \pagestyle{fancy}
@@ -98,6 +102,5 @@
         \item Writing a report that clearly and concisely details the development of the SLAM algorithm, the genetic algorithm, and the simulation environment
     \end{itemize}
 
-    \bibliography{custom}
-    \bibliographystyle{ieeetr}
+    \printbibliography
 \end{document}
