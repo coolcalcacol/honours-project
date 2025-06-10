@@ -4,11 +4,6 @@
 % Preamble
 \documentclass[a4paper]{article}
 
-
-\bibliographystyle{unsrt}
-\nocite{*}  % Include all entries in the bibliography
-
-
 % Metadata
 \newcommand{\docTitle}{Literature Review - Investigating the use of Genetic Algorithms to optimise a path planning algorithm within the Context of a Formula Student Team}
 \newcommand{\docAuthor}{Alex Dumbreck - 40552841}
@@ -26,6 +21,7 @@
     hidelinks,                % clickable links in table of contents
 ]{hyperref}
 \usepackage[svgnames]{xcolor}
+\usepackage[backend=biber, style=numeric]{biblatex}
 
 % Configure Minted
 \usemintedstyle{native}
@@ -38,6 +34,9 @@
     framesep=2mm,
     bgcolor=Black,
 }
+
+\addbibresource{../custom.bib}
+\nocite{*}
 
 % Page Layout
 \title{\docTitle}
@@ -62,6 +61,5 @@
 
     \clearpage
     \appendix
-    \bibliography{custom.bib}
-
+    \printbibliography
 \end{document}

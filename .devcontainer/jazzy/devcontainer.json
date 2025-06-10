@@ -1,0 +1,43 @@
+{
+  "name": "ROS 2 Workspace jazzy-ros-base",
+  "remoteUser": "fstn_anon",
+  "build": {
+    "context": "..",
+    "dockerfile": "../Dockerfile",
+    "args": {
+      "ROS_DISTRO": "jazzy",
+      "USERNAME": "fstn_anon",
+      "GID": "1000",
+      "UID": "1000"
+    }
+  },
+
+  "customizations": {
+    "jetbrains": {
+      "settings": {},
+      "backend": "CLion",
+      "plugins": [
+        "com.github.copilot",
+        "mobi.hsz.idea.gitignore",
+        "ru.adelf.idea.dotenv"
+      ],
+    },
+    "vscode": {
+      "extensions": ["ms-iot.vscode-ros"]
+    }
+  },
+  "workspaceFolder": "/home/fstn_anon/fstn_ws",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/fstn_anon/fstn_ws,type=bind",
+  "mounts": [
+    "source=~/.ssh,target=/home/fstn_anon/.ssh,type=bind,consistency=cached",
+  ],
+  "runArgs": [
+    "--net=host",
+
+    // For CAN support
+    "--cap-add=NET_ADMIN",
+
+    // For Docker-In-Docker support
+    "--privileged"
+  ]
+}
